@@ -10,6 +10,15 @@
         "noEmit": true,
         "skipLibCheck": true,
         "resolveJsonModule": true,
-        "strict": true
+        "strict": true,
+        "target": "es5",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "isolatedModules": true,
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "strictFunctionTypes": true
     }
 }

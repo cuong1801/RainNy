@@ -1,13 +1,14 @@
 import { Unknown } from "./Unknown";
 
 export interface City extends Unknown {
-  name?: string;
-  RainyAround?: number;
-  status: string;
-  town?: Town[];
+  cityName: string;
+  rainyAround?: number;
+  status?: string;
+  provinces?: Provinces[];
 }
-export interface Town extends Unknown {
-  name: string;
-  RainyAround: number;
+export interface Provinces extends Unknown {
+  provinceName: string;
+  rainyAround?: number;
   status: string;
+  area?: string;
 }

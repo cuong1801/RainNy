@@ -1,52 +1,79 @@
 export const DataSource = [
   {
-    name: "Hà Giang",
-    RainyAround: 200,
+    cityName: "Hà Giang",
+    rainyAround: 200,
     status: "many",
-    town: {
-      name: "Hà Giang",
-      RainyAround: 200,
-      status: "many",
-    },
+    provinces: [
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+        status: "many",
+      },
+    ],
   },
   {
-    name: "Bắc Giang",
-    RainyAround: 200,
+    cityName: "Bắc Giang",
+    rainyAround: 200,
     status: "little",
-    town: {
-      name: "Hà Giang",
-      RainyAround: 200,
-      status: "many",
-    },
+    provinces: [
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+        status: "little",
+      },
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+        status: "alway",
+      },
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+        status: "many",
+      },
+    ],
   },
   {
-    name: "Điện Biên Phủ",
-    RainyAround: 200,
+    cityName: "Điện Biên Phủ",
+    rainyAround: 200,
     status: "alway",
-    town: {
-      name: "Hà Giang",
-      RainyAround: 200,
-      status: "many",
-    },
+    provinces: [
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+        status: "many",
+      },
+    ],
   },
   {
-    name: "Phan Rang-Tháp Chàm	",
-    RainyAround: 200,
+    cityName: "Phan Rang-Tháp Chàm	",
+    rainyAround: 200,
     status: "alway",
-    town: {
-      name: "Hà Giang",
-      RainyAround: 200,
-      status: "many",
-    },
+    provinces: [
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        status: "many",
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+      },
+    ],
   },
   {
-    name: "Thái Nguyên",
-    RainyAround: 200,
+    cityName: "Thái Nguyên",
+    rainyAround: 200,
     status: "alway",
-    town: {
-      name: "Hà Giang",
-      RainyAround: 200,
-      status: "many",
-    },
+    provinces: [
+      {
+        provinceName: "Hà Giang",
+        rainyAround: 200,
+        status: "many",
+        area: "phòng công cộng cồng công cocongr công công cộng cộng",
+      },
+    ],
   },
 ];

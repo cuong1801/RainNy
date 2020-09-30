@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     padding: 5,
     backgroundColor: "white",
-    marginTop: 20,
   },
   imgRow: { flex: 1, top: 20, alignItems: "center" },
   logo: {
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
   },
   inputColumn: { flexDirection: "column" },
   labelError: {
-    display: "none",
     flexDirection: "column",
   },
   textError: {

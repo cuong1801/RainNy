@@ -1,13 +1,17 @@
-import React, { useRef, useState } from "react";
+import firebase from "firebase";
+import React, { Fragment, useLayoutEffect, useRef, useState } from "react";
 import { Image, SafeAreaView, ScrollView, Text, View } from "react-native";
-import imageLogo from "../../../assets/moonphotobackyard800x800.jpg";
+import { LoginProps } from "../../navigator";
 import { Button } from "../login/components/Button";
 import { FormInput } from "../login/components/FormInput";
 import styles from "./style/index";
+const imageLogin = require("../../../assets/rainyAround.png");
 
-export const LoginAuthor = (): JSX.Element => {
+export const LoginAuthor = (props: LoginProps): JSX.Element => {
   const [UserName, SetUserName] = useState("");
   const [PassWord, SetPassWord] = useState("");
+  const [errorMessenger, SetError] = useState("");
+
   const textError = useRef<Text>(null);
 
   const handleEmailChange = (email: string) => {
@@ -18,15 +22,29 @@ export const LoginAuthor = (): JSX.Element => {
     SetPassWord(password);
   };
 
+  useLayoutEffect(() => {
+    props.navigation.setOptions({
+      header: () => {
+        return <Fragment />;
+      },
+    });
+  }, []);
+
   const handleLoginPress = () => {
-    //   textError.current.st
-    // console.log("object :>> ", textError.current);
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(UserName, PassWord)
+      .then((user) => {
+        props.navigation.navigate("Home");
+      })
+      .catch((error) => SetError(error.message));
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.imgRow}>
-          <Image source={imageLogo} style={styles.logo} />
+          <Image source={imageLogin} style={styles.logo} />
         </View>
         <View style={styles.inputRow}>
           <View style={styles.inputColumn}>
@@ -44,10 +62,9 @@ export const LoginAuthor = (): JSX.Element => {
               placeholder={"Password"}
             />
           </View>
-
           <View style={styles.labelError}>
-            <Text ref={textError} style={styles.textError}>
-              Email hoặc password không đúng!
+            <Text style={styles.textError} ref={textError}>
+              {errorMessenger}
             </Text>
           </View>
           <View style={styles.forgotPassRow}>
